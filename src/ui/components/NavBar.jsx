@@ -4,7 +4,7 @@ import { FaBars } from 'react-icons/fa';
 import { useMenu } from '../../context/MenuContext'; 
 
 export const NavBar = () => {
-  const { toggleMenu } = useMenu();
+  const { toggleMenu, toggleSearch } = useMenu();
 
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-dark shadow-lg pb-2 pt-2">
@@ -25,6 +25,7 @@ export const NavBar = () => {
 
           {/* Botón de búsqueda */}
           <button
+            onClick={ toggleSearch }
             className="btn d-flex align-items-center ms-2"
             style={{ background: 'transparent', border: 'none', color: '#d3d3d3' }}
           >

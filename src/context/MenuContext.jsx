@@ -3,15 +3,20 @@ import React, { createContext, useContext, useState } from 'react';
 // Creamos el contexto
 const MenuContext = createContext();
 
-// El provider que manejará el estado del menú
-export const MenuProvider = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  // Función para alternar el estado del menú
+export const MenuProvider = ({ children }) => {
+
+  // El provider que manejará el estado del menú
+  const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(prevState => !prevState);
 
+
+  // El provider que manejará el estado del search
+  const [overlay, setOverlay] = useState(false);
+  const toggleSearch = () => setOverlay(prevState => !prevState);
+
   return (
-    <MenuContext.Provider value={{ isOpen, toggleMenu }}>
+    <MenuContext.Provider value={{ isOpen, toggleMenu, overlay, toggleSearch }}>
       {children}
     </MenuContext.Provider>
   );

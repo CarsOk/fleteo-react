@@ -9,6 +9,9 @@ export const SideBar = () => {
   const { logOut, user } = useContext(AuthContext);
   const { isOpen, toggleMenu } = useMenu();
 
+  // si overlay es true se quita la sideBar
+  const { overlay } = useMenu();
+
   return (
     <div
       className={`d-flex flex-column bg-light text-black`}
@@ -18,8 +21,8 @@ export const SideBar = () => {
         position: 'fixed',
         top: '0',
         left: '0',
-        transform: isOpen ? 'translateX(0)' : 'translateX(-100%)', 
-        transition: 'transform 0.3s ease-in-out', // Animación suave
+        transform: isOpen && !overlay ? 'translateX(0)' : 'translateX(-100%)',
+        transition: 'transform 0.3s ease-in-out',
         zIndex: '1000',
       }}
     >
