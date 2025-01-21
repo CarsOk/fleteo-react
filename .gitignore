@@ -1,0 +1,14 @@
+# Ignorar node_modules
+node_modules/
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos de entorno
+.env
+
+# Ignorar carpetas de configuración específicas de IDEs (Ejemplo: VS Code)
+.vscode/
+
+# Ignorar dependencias de yarn si usas Yarn
+yarn.lock
